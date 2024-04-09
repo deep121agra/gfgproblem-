@@ -1,0 +1,36 @@
+class Solution:
+    def indexes(self, v, x):
+        # Your code goes here
+        start=0
+        end=len(v)-1
+        ans=-1
+        lst=[-1]*2
+        while start<=end:
+            mid=(start+end)//2
+            if v[mid]==x:
+                ans=mid
+                start=mid+1
+            elif v[mid]>x:
+                end=mid-1
+            else:
+                start=mid+1
+        lst[1]=ans
+        # Your code goes here
+        start=0
+        end=len(v)-1
+        ans=-1
+        while start<=end:
+            mid=(start+end)//2
+            if v[mid]==x:
+                ans=mid
+                end=mid-1
+            elif v[mid]>x:
+                end=mid-1
+            else:
+                start=mid+1
+        lst[0]=ans
+        if ans ==-1:
+            return lst
+        else:
+            return lst
+                
